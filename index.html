@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChiefOS</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="The AI-powered chief mate" />
+
+    <!-- Viewport & Theme -->
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      content="black"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="white"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Gilroy Font -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Extrabold.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@fonts/Gilroy-Light.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Landbot Scripts -->
+    <script
+      SameSite="None; Secure"
+      type="module"
+      src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"
+    ></script>
+
+    <style>
+      /* Custom CSS Variables for ChiefOS theme */
+      :root {
+        --background: oklch(1 0 0);
+        --foreground: oklch(0.145 0 0);
+        --card: oklch(1 0 0);
+        --card-foreground: oklch(0.145 0 0);
+        --popover: oklch(1 0 0);
+        --popover-foreground: oklch(0.145 0 0);
+        --primary: oklch(0.35 0.12 265);
+        --primary-foreground: oklch(0.985 0 0);
+        --secondary: oklch(0.97 0 0);
+        --secondary-foreground: oklch(0.205 0 0);
+        --muted: oklch(0.97 0 0);
+        --muted-foreground: oklch(0.556 0 0);
+        --accent: oklch(0.97 0 0);
+        --accent-foreground: oklch(0.205 0 0);
+        --destructive: oklch(0.577 0.245 27.325);
+        --destructive-foreground: oklch(0.577 0.245 27.325);
+        --border: oklch(0.922 0 0);
+        --input: oklch(0.922 0 0);
+        --ring: oklch(0.87 0 0);
+        --radius: 0.625rem;
+        --chiefos-yellow: oklch(0.72 0.15 75);
+        --chiefos-yellow-foreground: oklch(1 0 0);
+      }
+
+      .dark {
+        --background: oklch(0.145 0 0);
+        --foreground: oklch(0.985 0 0);
+        --card: oklch(0.145 0 0);
+        --card-foreground: oklch(0.985 0 0);
+        --popover: oklch(0.145 0 0);
+        --popover-foreground: oklch(0.985 0 0);
+        --primary: oklch(0.45 0.12 265);
+        --primary-foreground: oklch(1 0 0);
+        --secondary: oklch(0.269 0 0);
+        --secondary-foreground: oklch(0.985 0 0);
+        --muted: oklch(0.269 0 0);
+        --muted-foreground: oklch(0.708 0 0);
+        --accent: oklch(0.269 0 0);
+        --accent-foreground: oklch(0.985 0 0);
+        --destructive: oklch(0.396 0.141 25.723);
+        --destructive-foreground: oklch(0.637 0.237 25.331);
+        --border: oklch(0.269 0 0);
+        --input: oklch(0.269 0 0);
+        --ring: oklch(0.439 0 0);
+        --chiefos-yellow: oklch(0.65 0.18 75);
+        --chiefos-yellow-foreground: oklch(0.98 0 0);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+        background: linear-gradient(to bottom, #0f172a, #1e3a8a, #1e293b);
+        color: var(--foreground);
+        min-height: 100vh;
+      }
+
+      .dark body {
+        background: linear-gradient(to bottom, #0f172a, #1e3a8a, #1e293b);
+      }
+
+      /* Header styles */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: white;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        height: 2.5rem;
+        width: auto;
+      }
+
+      /* Main content styles */
+      .main-content {
+        padding: 3rem 1rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .main-content {
+          padding: 4rem 1rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .main-content {
+          padding: 8rem 1rem;
+        }
+      }
+
+      .content-wrapper {
+        max-width: 64rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .title {
+        font-family: "Gilroy", sans-serif;
+        font-size: 1.875rem;
+        font-weight: 300;
+        color: white;
+        margin-bottom: 3rem;
+        padding: 0 2rem;
+        line-height: 1;
+      }
+
+      @media (min-width: 640px) {
+        .title {
+          font-size: 3rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .title {
+          font-size: 3.75rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .title {
+          font-size: 4.5rem;
+        }
+      }
+
+      /* Landbot container */
+      #myLandbot {
+        width: 100%;
+        max-width: 900px;
+        height: 600px;
+        margin: 2rem auto;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        #myLandbot {
+          height: 500px;
+          margin: 1rem auto;
+        }
+      }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "var(--background)",
+              foreground: "var(--foreground)",
+              card: "var(--card)",
+              "card-foreground": "var(--card-foreground)",
+              popover: "var(--popover)",
+              "popover-foreground": "var(--popover-foreground)",
+              primary: "var(--primary)",
+              "primary-foreground": "var(--primary-foreground)",
+              secondary: "var(--secondary)",
+              "secondary-foreground": "var(--secondary-foreground)",
+              muted: "var(--muted)",
+              "muted-foreground": "var(--muted-foreground)",
+              accent: "var(--accent)",
+              "accent-foreground": "var(--accent-foreground)",
+              destructive: "var(--destructive)",
+              "destructive-foreground": "var(--destructive-foreground)",
+              border: "var(--border)",
+              input: "var(--input)",
+              ring: "var(--ring)",
+              "chiefos-yellow": "var(--chiefos-yellow)",
+              "chiefos-yellow-foreground": "var(--chiefos-yellow-foreground)",
+            },
+            borderRadius: {
+              lg: "var(--radius)",
+              md: "calc(var(--radius) - 2px)",
+              sm: "calc(var(--radius) - 4px)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="flex items-center">
+            <a href="/" class="flex items-center space-x-2">
+              <img
+                src="https://f003.backblazeb2.com/file/chiefos-app/chiefos-logo/chiefos-logo-white.png"
+                alt="ChiefOS Logo"
+                class="logo"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <!-- <h1 class="title">ChiefOS, your AI-powered chief mate</h1> -->
+
+        <!-- Landbot Embed -->
+        <div id="myLandbot"></div>
+      </div>
+    </main>
+
+    <!-- Landbot Initialization -->
+    <script type="module">
+      var myLandbot = new Landbot.Container({
+        container: "#myLandbot",
+        configUrl:
+          "https://storage.googleapis.com/landbot.pro/v3/H-3211657-ANKE4W23FXTU2K2O/index.json",
+      });
+    </script>
+  </body>
+</html>
