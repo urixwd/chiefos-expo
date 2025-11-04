@@ -363,5 +363,45 @@
           "https://storage.googleapis.com/landbot.pro/v3/H-3211657-ANKE4W23FXTU2K2O/index.json",
       });
     </script>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-6 md:py-0 px-4">
+      <div class="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
+        <p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
+          © <span id="currentYear"></span> ChiefOS. All rights reserved.
+        </p>
+        <nav class="flex gap-4 sm:gap-6">
+          <a
+            href="https://app.chiefos.online/legal/terms.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            Terms and Conditions
+          </a>
+          <a
+            href="https://app.chiefos.online/legal/privacy.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="https://app.chiefos.online/legal/imprint.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            Imprint
+          </a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      // Update current year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
